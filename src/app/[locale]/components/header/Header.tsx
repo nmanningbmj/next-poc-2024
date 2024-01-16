@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { LanguageSwitch } from "./LanguageSwitch";
+import { Navbar } from "./Navbar";
 
 const Header = () => {
   return (
@@ -11,6 +12,8 @@ const Header = () => {
         </Link>
         <LanguageSwitch />
       </div>
+
+      <Navbar />
     </section>
   );
 };

@@ -8,9 +8,11 @@ export default function Home() {
 
   return (
     <main>
-      <Link href={`${pathname}/specialites`}>Specialites</Link>
-      <Link href="/topic">topic</Link>
-      <Link href={`${pathname}/about`}>About</Link>
+      <div className="container">
+        <Link href={`${pathname}/specialites`}>Specialites</Link>
+        <Link href="/topic">topic</Link>
+        <Link href={`${pathname}/about`}>About</Link>
+      </div>
     </main>
   );
 }

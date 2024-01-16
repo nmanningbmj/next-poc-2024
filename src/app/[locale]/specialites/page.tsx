@@ -1,3 +1,7 @@
+interface Specialty {
+  name: string;
+}
+
 export default async function Page() {
   const res = await fetch(
     "https://dev.contentds-api.tf.aws.bmjgroup.com/specialty/all"
@@ -8,11 +12,15 @@ export default async function Page() {
   return (
     <main>
       <h1>BP specialites</h1>
-      <ul>
-        {data.map((specialty) => (
-          <li key={specialty.name}>{specialty.name}</li>
-        ))}
-      </ul>
+      <div className="specialties">
+        <div className="container">
+          <ul>
+            {data.map((specialty: Specialty) => (
+              <li key={specialty.name}>{specialty.name}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </main>
   );
 }

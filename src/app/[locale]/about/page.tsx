@@ -5,8 +5,10 @@ export default function Page() {
 
   return (
     <main>
-      <h1>{t("title")}</h1>
-      <h1>{t("body")}</h1>
+      <div className="container">
+        <h1>{t("title")}</h1>
+        <p>{t("body")}</p>
+      </div>
     </main>
   );
 }
