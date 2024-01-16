@@ -11,7 +11,6 @@ type Language = {
 // Language data
 const languages: Language[] = [
   { code: "en", name: "English" },
-  { code: "en-us", name: "English (US)" },
   { code: "pt", name: "Portuguese" },
   { code: "cn", name: "中文" },
 ];
@@ -24,23 +23,22 @@ export const LanguageSwitch = () => {
   // Handle language change
   const handleLanguageChange = (event: ChangeEvent<HTMLSelectElement>) => {
     const selectedLanguageCode = event.target.value;
-    // Split the current pathname into an array
     const pathParts = pathname.split("/");
-
-    // Replace the first element with the selected language code
     pathParts[1] = selectedLanguageCode;
-
-    // Join the array back into a string to form the new path
     const newPath = pathParts.join("/");
-
-    // Push the updated path to the router
     router.push(newPath);
   };
+
+  const currentLanguageCode = pathname.split("/")[1];
 
   return (
     <select className="languageSelect" onChange={handleLanguageChange}>
       {languages.map((language) => (
-        <option key={language.code} value={language.code}>
+        <option
+          key={language.code}
+          value={language.code}
+          selected={language.code === currentLanguageCode}
+        >
           {language.name}
         </option>
       ))}
